@@ -17,14 +17,14 @@ app.get('/api/persons', (request, response) => {
     Person.find({}).then(result => response.json(result))
 })
 
-app.get('/info', (request, response) => {
-    const entries = persons.length
-    const date = new Date().toString()
+// app.get('/info', (request, response) => {
+//     const entries = persons.length
+//     const date = new Date().toString()
 
-    const data = `<p>Phonebook has info of ${entries} people</p><p>${date}</p>`
+//     const data = `<p>Phonebook has info of ${entries} people</p><p>${date}</p>`
 
-    response.send(data)
-})
+//     response.send(data)
+// })
 
 app.get('/api/persons/:id', (request, response) => {
     Person.findById(request.params.id).then(result => {response.json(result)})
